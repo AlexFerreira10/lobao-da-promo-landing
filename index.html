@@ -1,0 +1,349 @@
+<title>Lobão da Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --panel: #17171a;
+    --panel-2: #1f1f22;
+    --yellow: #ffc900;
+    --yellow-ink: #3a2900;
+    --green: #22c55e;
+    --green-deep: #15803d;
+    --white: #ffffff;
+    --muted: #a9a9ae;
+    --line: rgba(255,255,255,0.09);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: "Work Sans", -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .impact {
+    font-family: "Anton", "Work Sans", sans-serif;
+    text-transform: uppercase;
+    line-height: 0.98;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+  }
+  .ribbon {
+    background: var(--yellow);
+    color: var(--yellow-ink);
+    text-align: center;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  @media (max-width: 860px) {
+    .ribbon { padding: 7px 12px; font-size: 11.5px; }
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 20px 2.5rem;
+  }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding: 1.25rem 20px 1.75rem; gap: 1.1rem; }
+    .brand-tag { margin-bottom: 0.9rem; }
+    .hero-title { font-size: 2rem; }
+    .hero-sub { font-size: 15px; margin: 0.75rem 0 1.25rem; }
+    .cta { width: 100%; padding: 15px 20px; }
+    .hero-photo img { border-radius: 14px; max-height: 46vh; object-fit: cover; object-position: top center; }
+  }
+  .brand-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px 6px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-bottom: 1.5rem;
+  }
+  .brand-tag .dot {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--yellow); color: var(--yellow-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    color: var(--white);
+  }
+  .hero-title .hi { color: var(--yellow); }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 460px;
+    margin: 1.1rem 0 1.9rem;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(180deg, #34d873, var(--green-deep));
+    color: #062812;
+    font-weight: 800;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-radius: 999px;
+    box-shadow: 0 0 0 1px rgba(34,197,94,0.5), 0 0 28px -4px rgba(34,197,94,0.65);
+  }
+  .cta svg { width: 22px; height: 22px; flex: none; }
+  .cta-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+  .cta-note b { color: var(--white); font-weight: 600; }
+  .hero-photo img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+  }
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 0.5rem 20px 3rem;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  @media (max-width: 700px) {
+    .benefits { grid-template-columns: repeat(2, 1fr); }
+  }
+  .benefit {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .benefit .icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,201,0,0.12);
+    border: 1.5px solid var(--yellow);
+    color: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 10px;
+  }
+  .benefit .icon svg { width: 22px; height: 22px; }
+  .benefit-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--white);
+  }
+  .section {
+    padding: 3rem 20px;
+    border-top: 1px solid var(--line);
+  }
+  .section-eyebrow {
+    text-align: center;
+    color: var(--yellow);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+    color: var(--white);
+    margin-bottom: 2rem;
+  }
+  .phone-mock {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #0c1a14;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    overflow: hidden;
+  }
+  .phone-head {
+    background: #075e42;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .phone-head .av {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--yellow); color: var(--yellow-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px; flex: none;
+  }
+  .phone-head .name { font-size: 14px; font-weight: 700; color: #fff; }
+  .phone-head .sub { font-size: 11.5px; color: #bfe9d6; }
+  .phone-body { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .msg {
+    background: #f6fdf9;
+    color: #14251d;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13px;
+    max-width: 92%;
+  }
+  .msg .title { font-weight: 700; margin-bottom: 4px; }
+  .msg .price-from { text-decoration: line-through; color: #6b7d74; font-size: 12px; }
+  .msg .price-to { color: #1a8f4c; font-weight: 800; }
+  .msg .off {
+    display: inline-block;
+    background: #ffe6a3;
+    color: #6b4900;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 6px;
+    padding: 1px 6px;
+    margin-left: 6px;
+  }
+  .msg .link { display: block; margin-top: 4px; color: #1c6fd8; font-size: 12px; }
+  .deal-note {
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--muted);
+    max-width: 380px;
+    margin: 1.75rem auto 0;
+  }
+  .stores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.75rem 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .store {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    color: var(--white);
+  }
+  .final {
+    text-align: center;
+    padding: 3.5rem 20px 3rem;
+  }
+  .final-title {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+  .final-sub {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 380px;
+    margin: 0 auto 1.75rem;
+  }
+  footer {
+    text-align: center;
+    padding: 1.75rem 20px 2.5rem;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+</style>
+
+<div class="ribbon">🔥 ATÉ 70% DE DESCONTO — VAGAS LIMITADAS NO GRUPO HOJE</div>
+
+<div class="hero">
+  <div>
+    <span class="brand-tag"><span class="dot">🐺</span> Lobão da Promo</span>
+    <h1 class="impact hero-title">As melhores<br>ofertas <span class="hi">direto</span><br>no seu whatsapp</h1>
+    <p class="hero-sub">Desconto real de pelo menos 35%, checado antes de sair. O Lobão garimpa, você só aproveita.</p>
+    <a class="cta" href="https://chat.whatsapp.com/SEU_LINK_AQUI">
+      <svg viewBox="0 0 24 24" fill="#062812"><path d="M12.01 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.6 1.37 5.1L2 22l5.05-1.36A9.94 9.94 0 0 0 12 22c5.51 0 10-4.48 10-10S17.52 2 12.01 2Zm.02 18.2c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3 .8.8-2.92-.2-.3a8.18 8.18 0 0 1-1.24-4.3c0-4.53 3.7-8.2 8.24-8.2 4.53 0 8.23 3.67 8.23 8.2 0 4.53-3.7 8.2-8.24 8.2Zm4.5-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04s.88 2.37 1 2.53c.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+      Entrar grátis no grupo
+    </a>
+    <p class="cta-note"><b>100% gratuito</b> · sem spam · saia quando quiser</p>
+  </div>
+  <div class="hero-photo">
+    <img src="lobao-hero.jpg" alt="Mascote Lobão da Promo mostrando o celular com ofertas no grupo do WhatsApp">
+  </div>
+</div>
+
+<div class="benefits">
+  <div class="benefit">
+    <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.24L4 3a1 1 0 0 0-1 1l.24 5.59a2 2 0 0 0 .59 1.41l9.58 9.59a2 2 0 0 0 2.83 0l5.35-5.35a2 2 0 0 0 0-2.83Z"/><circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+    <div class="benefit-label">Descontos reais</div>
+  </div>
+  <div class="benefit">
+    <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></div>
+    <div class="benefit-label">Frete grátis</div>
+  </div>
+  <div class="benefit">
+    <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 4.5 3 7.7 8 9 5-1.3 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="benefit-label">Compra segura</div>
+  </div>
+  <div class="benefit">
+    <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/><circle cx="12" cy="7" r="4"/></svg></div>
+    <div class="benefit-label">Tudo em 1 grupo</div>
+  </div>
+</div>
+
+<section class="section">
+  <p class="section-eyebrow">Achados de hoje</p>
+  <h2 class="impact section-title">Um gostinho do que chega pra você</h2>
+  <div class="phone-mock">
+    <div class="phone-head">
+      <span class="av">🐺</span>
+      <div><div class="name">Lobão da Promo</div><div class="sub">grupo · ofertas verificadas</div></div>
+    </div>
+    <div class="phone-body">
+      <div class="msg">
+        <div class="title">Creatina 1kg Monohidratada 100% Pura</div>
+        <span class="price-from">R$ 239</span> <span class="price-to">R$ 77</span><span class="off">67% off</span>
+        <a class="link" href="#">mercadolivre.com/...</a>
+      </div>
+      <div class="msg">
+        <div class="title">Kit 2 Refletor Super Led 400w</div>
+        <span class="price-from">R$ 99</span> <span class="price-to">R$ 43</span><span class="off">56% off</span>
+        <a class="link" href="#">mercadolivre.com/...</a>
+      </div>
+      <div class="msg">
+        <div class="title">O Boticário Insensatez Deo Colônia 100ml</div>
+        <span class="price-from">R$ 174</span> <span class="price-to">R$ 86</span><span class="off">50% off</span>
+        <a class="link" href="#">mercadolivre.com/...</a>
+      </div>
+    </div>
+  </div>
+  <p class="deal-note">Ofertas reais garimpadas hoje pelo Lobão — no grupo elas chegam com foto, cupom (quando tem) e link direto pra comprar.</p>
+</section>
+
+<section class="section">
+  <p class="section-eyebrow">Onde o Lobão garimpa</p>
+  <div class="stores">
+    <span class="store">Mercado Livre</span>
+    <span class="store">Shopee</span>
+    <span class="store">Amazon</span>
+    <span class="store">Magalu</span>
+    <span class="store">Adidas</span>
+    <span class="store">Nike</span>
+  </div>
+</section>
+
+<section class="final">
+  <h2 class="impact final-title">O lobão já tá de olho<br>na próxima oferta</h2>
+  <p class="final-sub">Entra no grupo antes que as vagas de hoje acabem.</p>
+  <a class="cta" href="https://chat.whatsapp.com/SEU_LINK_AQUI">
+    <svg viewBox="0 0 24 24" fill="#062812"><path d="M12.01 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.6 1.37 5.1L2 22l5.05-1.36A9.94 9.94 0 0 0 12 22c5.51 0 10-4.48 10-10S17.52 2 12.01 2Zm.02 18.2c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3 .8.8-2.92-.2-.3a8.18 8.18 0 0 1-1.24-4.3c0-4.53 3.7-8.2 8.24-8.2 4.53 0 8.23 3.67 8.23 8.2 0 4.53-3.7 8.2-8.24 8.2Zm4.5-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04s.88 2.37 1 2.53c.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+    Quero entrar no grupo
+  </a>
+</section>
+
+<footer>Lobão da Promo · grupo independente de recomendação de ofertas · não afiliado ao Mercado Livre, Shopee ou Amazon</footer>
