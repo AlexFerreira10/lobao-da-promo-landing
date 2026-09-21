@@ -305,7 +305,7 @@
     <span class="brand-tag"><span class="dot">🐺</span> Lobão da Promo</span>
     <h1 class="impact hero-title">As melhores<br>ofertas <span class="hi">direto</span><br>no seu whatsapp</h1>
     <p class="hero-sub">Desconto real de pelo menos 35%, checado antes de sair. O Lobão garimpa, você só aproveita.</p>
-    <a class="cta" href="https://chat.whatsapp.com/ELBkDSFSliO3rAjO4xk69x?mode=gi_t">
+    <a class="cta" href="https://chat.whatsapp.com/ELBkDSFSliO3rAjO4xk69x">
       <svg viewBox="0 0 24 24" fill="#062812"><path d="M12.01 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.6 1.37 5.1L2 22l5.05-1.36A9.94 9.94 0 0 0 12 22c5.51 0 10-4.48 10-10S17.52 2 12.01 2Zm.02 18.2c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3 .8.8-2.92-.2-.3a8.18 8.18 0 0 1-1.24-4.3c0-4.53 3.7-8.2 8.24-8.2 4.53 0 8.23 3.67 8.23 8.2 0 4.53-3.7 8.2-8.24 8.2Zm4.5-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04s.88 2.37 1 2.53c.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
       Entrar grátis no grupo
     </a>
@@ -384,7 +384,7 @@
   <div class="container">
     <h2 class="impact final-title">O lobão já tá de olho<br>na próxima oferta</h2>
     <p class="final-sub">Entra no grupo antes que as vagas de hoje acabem.</p>
-    <a class="cta" href="https://chat.whatsapp.com/ELBkDSFSliO3rAjO4xk69x?mode=gi_t">
+    <a class="cta" href="https://chat.whatsapp.com/ELBkDSFSliO3rAjO4xk69x">
       <svg viewBox="0 0 24 24" fill="#062812"><path d="M12.01 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.6 1.37 5.1L2 22l5.05-1.36A9.94 9.94 0 0 0 12 22c5.51 0 10-4.48 10-10S17.52 2 12.01 2Zm.02 18.2c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3 .8.8-2.92-.2-.3a8.18 8.18 0 0 1-1.24-4.3c0-4.53 3.7-8.2 8.24-8.2 4.53 0 8.23 3.67 8.23 8.2 0 4.53-3.7 8.2-8.24 8.2Zm4.5-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04s.88 2.37 1 2.53c.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
       Quero entrar no grupo
     </a>
@@ -395,11 +395,13 @@
 
 <script>
 (function () {
-  // Instagram/Facebook's in-app browser frequently fails to hand off
-  // chat.whatsapp.com invite links to the real WhatsApp app ("Couldn't load").
+  // Instagram/Facebook/WhatsApp's own in-app browsers frequently fail to
+  // hand off chat.whatsapp.com invite links to the real WhatsApp app
+  // ("Couldn't load") — WhatsApp's in-app browser is the worst offender,
+  // since it tries to open a WhatsApp link from inside WhatsApp itself.
   // Detect it and tell the visitor to reopen in their real browser.
   var ua = navigator.userAgent || '';
-  var isInAppBrowser = /Instagram|FBAN|FBAV|FB_IAB/.test(ua);
+  var isInAppBrowser = /Instagram|FBAN|FBAV|FB_IAB|WhatsApp/.test(ua);
   if (!isInAppBrowser) return;
 
   var banner = document.getElementById('webview-banner');
